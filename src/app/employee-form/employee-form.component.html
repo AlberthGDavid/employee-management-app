@@ -1,0 +1,28 @@
+<h2 class="text-center my-5">{{isEditing? 'Edit' : 'Create'}} Employee</h2>
+
+<div *ngIf="errorMessage != '' ">
+    {{errorMessage}}
+</div>
+<form class="border arround p-5 w-50 mb-5 mx-auto" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label class="form-label">First Name</label>
+        <input class="form-control" type="text" name="firstName" [(ngModel)]="employee.firstName" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Last Name</label>
+        <input  class="form-control" type="text" name="lasttName" [(ngModel)]="employee.lastName" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Phone</label>
+        <input  class="form-control" ype="phone" name="phone" [(ngModel)]="employee.phone" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input class="form-control" type="email" name="email" [(ngModel)]="employee.email" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Position</label>
+        <input class="form-control" type="text" name="position" [(ngModel)]="employee.position" />
+    </div>
+    <button class="btn btn-primary" type="submit">{{isEditing? 'Edit' : 'Create'}}</button>
+</form>
